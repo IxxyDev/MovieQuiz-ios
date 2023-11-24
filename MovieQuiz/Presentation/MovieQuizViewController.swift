@@ -1,6 +1,6 @@
 import UIKit
 
-final class MovieQuizViewController: UIViewController {
+final class MovieQuizViewController: UIViewController, MovieQuizViewControllerProtocol {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var questionTextLabel: UILabel!
     @IBOutlet weak var counterLabel: UILabel!
