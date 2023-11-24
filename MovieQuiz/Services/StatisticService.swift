@@ -18,7 +18,7 @@ protocol StatisticService {
     func store(correct count: Int, total amount: Int)
 }
 
-class StatisticServiceImplementation: StatisticService {
+final class StatisticServiceImplementation: StatisticService {
     private let userDefaults = UserDefaults.standard
     
     private enum Keys: String {
@@ -36,7 +36,6 @@ class StatisticServiceImplementation: StatisticService {
     var avgAccuracy: Double {
         get { return totalAccuracy / Double(gamesCount) }
     }
-    
     
     var bestGame: GameRecord {
         get {
