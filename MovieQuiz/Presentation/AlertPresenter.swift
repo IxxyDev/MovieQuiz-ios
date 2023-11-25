@@ -18,6 +18,7 @@ final class AlertPresenter {
         }
         
         guard let viewController = viewController else { return }
+        alertUI.view.accessibilityIdentifier = "Game results"
         alertUI.addAction(action)
         viewController.present(alertUI, animated: true, completion: nil)
     }

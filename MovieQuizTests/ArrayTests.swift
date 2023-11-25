@@ -8,7 +8,6 @@ class ArrayTests: XCTestCase {
        // When
         let value = array[safe: 2]
        // Then
-        XCTAssertNotNil(value)
         XCTAssertEqual(value, 2)
     }
     
@@ -16,7 +15,7 @@ class ArrayTests: XCTestCase {
         // Given
         let array = [1, 1, 2, 3, 5]
         // When
-         let value = array[safe: 2]
+         let value = array[safe: 10]
         // Then
          XCTAssertNil(value)
     }

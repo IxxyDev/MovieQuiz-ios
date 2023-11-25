@@ -89,6 +89,5 @@ class MoviesLoaderTests: XCTestCase {
         }
             
         waitForExpectations(timeout: 1)
-        // Then
     }
 }
