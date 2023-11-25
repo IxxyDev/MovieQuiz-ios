@@ -3,18 +3,6 @@ import Foundation
 final class QuestionFactory: QuestionFactoryProtocol {
     private let moviesLoader: MoviesLoading
     private weak var delegate: QuestionsFactoryDelegate?
-//    private lazy var questions: [QuizQuestion] = [
-//        QuizQuestion(image: "The Green Elephant", text: questionLabel, isCorrectAnswer: true),
-//        QuizQuestion(image: "Pyat butylok vodki", text: questionLabel, isCorrectAnswer: true),
-//        QuizQuestion(image: "Vase de noces", text: questionLabel, isCorrectAnswer: false),
-//        QuizQuestion(image: "Srpski film", text: questionLabel, isCorrectAnswer: true),
-//        QuizQuestion(image: "Neposredstvenno Kakha", text: questionLabel, isCorrectAnswer: false),
-//        QuizQuestion(image: "The Best Movie", text: questionLabel, isCorrectAnswer: false),
-//        QuizQuestion(image: "Lords of the Lockerroom", text: questionLabel, isCorrectAnswer: true),
-//        QuizQuestion(image: "The Room", text: questionLabel, isCorrectAnswer: false),
-//        QuizQuestion(image: "Schastlivyy konets", text: questionLabel, isCorrectAnswer: false),
-//        QuizQuestion(image: "Sharknado", text: questionLabel, isCorrectAnswer: false),
-//    ]
     private var movies: [MostPopularMovie] = []
     
     init(moviesLoader: MoviesLoading, delegate: QuestionsFactoryDelegate? = nil) {
@@ -57,7 +45,7 @@ final class QuestionFactory: QuestionFactoryProtocol {
             let text = "Рейтинг этого фильма больше чем \(Int(ratingForQuestion))?"
             let correctAnswer = rating > ratingForQuestion
             
-            let question = QuizQuestion(image: imageData, text: text, isCorrectAnswer: correctAnswer)
+            let question = QuizQuestion(image: imageData, text: text, correctAnswer: correctAnswer)
             
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
